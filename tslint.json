@@ -8,7 +8,15 @@
     "no-empty": false,
     "no-empty-interface": false,
     "jsx-no-string-ref": false,
-    "variable-name": ["allow-leading-underscore"]
+    "interface-name": false,
+    "variable-name": ["allow-leading-underscore"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ]
   },
   "linterOptions": {
     "exclude": ["config/**/*.js", "node_modules/**/*.ts"]

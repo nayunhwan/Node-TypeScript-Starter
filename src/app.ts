@@ -1,10 +1,22 @@
-import Express from "express";
-var app = Express();
+import express from "express";
+import cors from "cors";
+import session from "express-session";
+import sessionConfig from "./configs/session";
+import * as bodyParser from "body-parser";
+import api from "./api";
 
-app.get("/", function(req: Express.Request, res: Express.Response) {
-  res.send("Hello World!");
-});
+const timezone = "UTC";
+process.env.TZ = timezone;
 
-app.listen(3000, function() {
-  console.log("Example app listening on port 3000!");
+var app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(session(sessionConfig));
+app.use(cors());
+
+app.use("/api", api);
+
+app.listen(8080, function() {
+  console.log("Example app listening on port 8080!");
 });

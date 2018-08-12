@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import session from "express-session";
 import sessionConfig from "./configs/session";
+import logger from "morgan";
 import * as bodyParser from "body-parser";
 import api from "./api";
 
@@ -10,6 +11,7 @@ process.env.TZ = timezone;
 
 var app = express();
 
+app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(session(sessionConfig));

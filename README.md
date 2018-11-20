@@ -1,5 +1,5 @@
-# Node-Typescript-Starter
-🚀 Node.js Express Typescript Starter 
+# Node-TypeScript-Starter
+🚀 Node.js Express TypeScript Starter 
 
 ## LICENSE
 [MIT Licensed](./LICENSE)
